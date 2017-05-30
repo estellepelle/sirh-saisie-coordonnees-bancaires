@@ -1,0 +1,39 @@
+ <h1>SGP - Saisie des Coordonnées Bancaires</h1>
+
+    <div>
+      <label>Filtrer par département : </label>
+      <select >
+          <option ng-repeat="departement in $ctrl.departements track by $index">{{departement.nom}}</option>
+      </select><br>
+
+      <label>Rechercher par nom : </label><br>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+        </tr>
+
+        
+      </thead>
+      <tbody>
+          <tr ng-repeat="collaborateur in $ctrl.collaborateurs track by $index">
+              <td>{{collaborateur.matricule}}</td>
+              <td>{{collaborateur.nom}}</td>
+              <td>{{collaborateur.prenom}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <label>Banque</label>
+    <input type="text" id="nomBanque"><br>
+    
+    <label>BIC</label>
+    <input type="text" id="bic"><br>
+    <label>IBAN</label>
+     <input type="text" id="iban"><br>
+
+     <input type="button" id="sauvegarder" value="Sauvegarder">
